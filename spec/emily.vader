@@ -1,0 +1,29 @@
+# Test case
+Execute (Emily indentation):
+  %d
+  Assert 1 == line('$')
+
+  setf emily
+  AssertEqual 'emily', &filetype
+
+Given emily (sample Emily block):
+  cowPowers = [
+  moo ^ = return "mooooooooo"
+  ]
+
+Do (indent the block):
+  vip=
+
+Expect ruby (indented block):
+  cowPowers = [
+      moo ^ = return "mooooooooo"
+  ]
+
+Do (indent and shift):
+  vip=
+  gv>
+
+Expect ruby (indented and shifted):
+      cowPowers = [
+          moo ^ = return "mooooooooo"
+      ]
